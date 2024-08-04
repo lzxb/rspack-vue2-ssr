@@ -35,8 +35,8 @@ export function createClientConfig(gez: Gez) {
         output: {
             ...base.output,
             module: true,
-            chunkFormat: 'module',
-            chunkLoading: 'import',
+            // chunkFormat: 'module',
+            // chunkLoading: 'import',
             filename: gez.isProd
                 ? 'js/[name].[contenthash:8].js'
                 : 'js/[name].js',

@@ -1,6 +1,6 @@
 <template>
-    <div>
-        Count value:
+    <div class="box">
+        Count value2:
         {{count}}
         <button @click="count++">Add</button>
     </div>
@@ -10,3 +10,9 @@ import { ref } from 'vue'
 
 const count = ref(0)
 </script>
+<style lang="less">
+
+.box {
+    background: red;
+}
+</style>

@@ -6,14 +6,14 @@ export default defineServer({
   async render(context) {
     const { app } = createApp()
     const html = await createRenderer({}).renderToString(app)
-    const name = await import('./test').then(m => m.getName())
+    const title = await import('./text').then(m => m.getTitle())
     context.html = `
     <!DOCTYPE html>
     <html>
     <head>
+      <title>${title}</title>
     </head>
     <body>
-    ${name}
     ${html}
     </body>
     </html>

@@ -12,6 +12,9 @@
   "dependencies": {
     "@gez/core": "0.0.14",
     "@rspack/core": "1.0.0-beta.2",
+    "less-loader": "^12.2.0",
+    "less": "^4.2.0",
+    "vue-template-compiler": "^2.7.16",
     "vue-loader": "npm:@gez/vue-loader@1.0.0",
     "webpack-dev-middleware": "^7.2.1",
     "webpack-hot-middleware": "^2.26.1",
