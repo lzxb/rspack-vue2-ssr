@@ -1,6 +1,6 @@
 <template>
     <div class="box">
-        Count value2:
+        Count value:
         {{count}}
         <button @click="count++">Add</button>
     </div>
@@ -13,6 +13,6 @@ const count = ref(0)
 <style lang="less">
 
 .box {
-    background: red;
+    background: yellow;
 }
 </style>

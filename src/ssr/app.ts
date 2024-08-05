@@ -9,7 +9,7 @@ import {
     ServerContext,
     type ServerRender
 } from '@gez/core';
-import { type MultiCompiler, rspack } from '@rspack/core';
+import { Compiler, rspack } from '@rspack/core';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
@@ -20,14 +20,14 @@ import {
 } from './config';
 
 function middleware(gez: Gez) {
-    let clientCompiler: MultiCompiler | null = null;
+    let clientCompiler: Compiler | null = null;
     let dev = (req: IncomingMessage, res: ServerResponse, next?: Function) => {
         return next?.();
     };
     let hot = dev;
     if (gez.command === COMMAND.dev) {
-        clientCompiler = rspack([createClientConfig(gez)]);
-        const serverCompiler = rspack([createServerConfig(gez)]);
+        clientCompiler = rspack(createClientConfig(gez));
+        const serverCompiler = rspack(createServerConfig(gez));
         // @ts-expect-error
         webpackDevMiddleware(serverCompiler, {
             publicPath: gez.base,

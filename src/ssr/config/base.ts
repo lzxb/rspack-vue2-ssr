@@ -61,6 +61,7 @@ export function createBaseConfig(gez: Gez) {
         },
         entry: {},
         ignoreWarnings: [],
-        cache: false
+        cache: false,
+        mode: gez.isProd ? 'production' : 'development'
     } satisfies RspackOptions;
 }
